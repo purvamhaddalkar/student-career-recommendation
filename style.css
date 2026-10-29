@@ -1,0 +1,16 @@
+:root { --blue:#173b6c; --bright:#2563eb; --bg:#f3f6fb; --text:#172033; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Segoe UI, Arial, sans-serif; }
+header { background:var(--blue); color:#fff; padding:30px max(24px, calc((100vw - 1120px)/2)); }
+.brand { font-size:28px; font-weight:700; } header p { margin:6px 0 0; color:#d5e5ff; }
+main { max-width:1120px; margin:28px auto; padding:0 18px; }
+nav { display:flex; gap:8px; margin-bottom:16px; }
+.tab { border:0; background:#dfe5ee; padding:12px 18px; font-weight:600; cursor:pointer; border-radius:7px; }
+.tab.active { color:#fff; background:var(--blue); }
+.panel { display:none; background:#fff; min-height:490px; padding:28px; border-radius:10px; box-shadow:0 3px 12px #182b4618; }
+.panel.active { display:block; } h2 { margin:0 0 8px; color:var(--blue); } .hint { color:#667085; margin:0 0 22px; }
+form { max-width:760px; } label { display:block; font-weight:600; margin:14px 0; }
+input, textarea { display:block; width:100%; border:1px solid #c7d0df; border-radius:5px; padding:10px; margin-top:5px; font:inherit; }
+textarea { min-height:86px; resize:vertical; }.primary { background:var(--bright); color:#fff; border:0; border-radius:6px; padding:12px 18px; font-weight:700; font-size:15px; cursor:pointer; margin-top:10px; }
+.table-wrap { overflow:auto; } table { width:100%; border-collapse:collapse; margin-top:16px; min-width:780px; } th,td { padding:12px; text-align:left; vertical-align:top; border-bottom:1px solid #dbe2ed; } th { background:#e8eef8; color:#173b6c; } .badge { font-weight:700; color:#0b6b3a; } .low { color:#9a3412; } .career-layout { display:grid; grid-template-columns:350px 1fr; gap:30px; }.career-form { border-right:1px solid #dbe2ed; padding-right:26px; }.delete { color:#b42318; background:#fff; border:1px solid #f0b9b4; border-radius:5px; padding:6px 9px; cursor:pointer; } footer { text-align:center; color:#667085; padding:4px 20px 32px; font-size:14px; }
+@media(max-width:760px) { .career-layout{grid-template-columns:1fr}.career-form{border:0;padding:0}.brand{font-size:22px}.panel{padding:18px} }

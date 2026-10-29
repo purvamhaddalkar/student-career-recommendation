@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Career Recommendation System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">Student Career Recommendation System</div>
+    <p>Find career options based on skills, interests and education</p>
+  </header>
+  <main>
+    <nav>
+      <button class="tab active" data-tab="profile">Student Profile</button>
+      <button class="tab" data-tab="results">Recommendations</button>
+      <button class="tab" data-tab="careers">Manage Careers</button>
+    </nav>
+
+    <section id="profile" class="panel active">
+      <h2>Enter your profile</h2>
+      <form id="profileForm">
+        <label>Name<input id="name" required placeholder="Enter full name"></label>
+        <label>Email<input id="email" type="email" placeholder="Enter email address"></label>
+        <label>Education<input id="education" placeholder="Example: BSc Computer Science"></label>
+        <label>Skills<input id="skills" required placeholder="Example: Python, SQL, Excel, Statistics"></label>
+        <label>Interests<input id="interests" required placeholder="Example: Data Analysis, Mathematics"></label>
+        <label>Career Preference<input id="preference" placeholder="Example: Data Analytics"></label>
+        <button class="primary" type="submit">Get Recommendations</button>
+      </form>
+    </section>
+
+    <section id="results" class="panel">
+      <h2>Your top career matches</h2>
+      <p class="hint">Scores are based on skills (40%), interests (30%), education (20%) and preference (10%).</p>
+      <div id="emptyResult">Fill the student profile and click Get Recommendations.</div>
+      <div class="table-wrap"><table id="resultTable" hidden><thead><tr><th>Rank</th><th>Career</th><th>Score</th><th>Recommendation Level</th><th>Skills to Develop</th><th>Description</th></tr></thead><tbody></tbody></table></div>
+    </section>
+
+    <section id="careers" class="panel">
+      <div class="career-layout">
+        <form id="careerForm" class="career-form">
+          <h2>Add a career</h2>
+          <label>Career Name<input id="careerName" required></label>
+          <label>Domain<input id="domain" required></label>
+          <label>Qualification<input id="qualification" placeholder="BSc Computer Science"></label>
+          <label>Skills<input id="careerSkills" required placeholder="comma separated"></label>
+          <label>Interests<input id="careerInterests" required placeholder="comma separated"></label>
+          <label>Description<textarea id="description" required></textarea></label>
+          <button class="primary" type="submit">Save Career</button>
+        </form>
+        <div class="career-list"><h2>Career database</h2><div class="table-wrap"><table><thead><tr><th>Career</th><th>Domain</th><th>Required Skills</th><th></th></tr></thead><tbody id="careerRows"></tbody></table></div></div>
+      </div>
+    </section>
+  </main>
+  <footer>Academic mini project • Python desktop version can also be used offline</footer>
+  <script src="script.js"></script>
+</body>
+</html>
