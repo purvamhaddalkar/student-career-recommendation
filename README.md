@@ -6,6 +6,11 @@ This version runs in any browser and requires no Python installation.
 
 Open `index.html` by double-clicking it.
 
+## Demo login
+
+- Email: `student@career.com`
+- Password: `1234`
+
 ## Publish free on GitHub Pages
 
 1. Sign in at https://github.com.

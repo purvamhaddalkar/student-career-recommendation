@@ -7,9 +7,22 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="loginScreen" class="login-screen">
+    <form id="loginForm" class="login-card">
+      <div class="login-icon">SC</div>
+      <h1>Student Career Portal</h1>
+      <p>Sign in to explore your career recommendations.</p>
+      <label>Email<input id="loginEmail" type="email" required placeholder="student@career.com"></label>
+      <label>Password<input id="loginPassword" type="password" required placeholder="Enter password"></label>
+      <p id="loginError" class="login-error" hidden>Invalid email or password.</p>
+      <button class="primary" type="submit">Login</button>
+      <small>Demo login: student@career.com | Password: 1234</small>
+    </form>
+  </div>
   <header>
     <div class="brand">Student Career Recommendation System</div>
     <p>Find career options based on skills, interests and education</p>
+    <button id="logoutButton" class="logout" type="button">Logout</button>
   </header>
   <main>
     <nav>

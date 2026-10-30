@@ -12,6 +12,17 @@ let careers = JSON.parse(localStorage.getItem('careerData') || 'null') || initia
 const toSet = value => new Set((value || '').split(',').map(x => x.trim().toLowerCase()).filter(Boolean));
 const save = () => localStorage.setItem('careerData', JSON.stringify(careers));
 
+const loginScreen = document.getElementById('loginScreen');
+const showApp = () => loginScreen.classList.add('hidden');
+if (sessionStorage.getItem('careerLogin') === 'true') showApp();
+document.getElementById('loginForm').addEventListener('submit', event => {
+  event.preventDefault();
+  const valid = document.getElementById('loginEmail').value.trim().toLowerCase() === 'student@career.com' && document.getElementById('loginPassword').value === '1234';
+  document.getElementById('loginError').hidden = valid;
+  if (valid) { sessionStorage.setItem('careerLogin', 'true'); showApp(); }
+});
+document.getElementById('logoutButton').addEventListener('click', () => { sessionStorage.removeItem('careerLogin'); loginScreen.classList.remove('hidden'); document.getElementById('loginForm').reset(); });
+
 document.querySelectorAll('.tab').forEach(button => button.addEventListener('click', () => {
   document.querySelectorAll('.tab,.panel').forEach(x => x.classList.remove('active'));
   button.classList.add('active'); document.getElementById(button.dataset.tab).classList.add('active');
